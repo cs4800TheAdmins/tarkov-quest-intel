@@ -1,0 +1,12 @@
+{
+    "id": "customs",
+    "name": "Customs",
+    "gameVersion": "unknown",
+    "imageUrl": "/public/maps/customs.jpg",
+    "widthPx": 6146,
+    "heightPx": 2775,
+    "boundsMinX": 0,
+    "boundsMinY": 0,
+    "boundsMaxX": 6146,
+    "boundsMaxY": 2775
+}

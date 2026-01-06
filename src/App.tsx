@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import MapView from "./ui/MapView/MapView";
+import SearchPanel from "./ui/panels/SearchPanel";
+import FilterPanel from "./ui/panels/FilterPanel";
+import MarkerDetailPanel from "./ui/panels/MarkerDetailPanel";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+    return (
+        <div style={{ display: "grid", height: "100vh", gridTemplateColumns: "300px 1fr 320px" }}>
+          <aside style={{ borderRight: "1px solid #ddd", padding: 12, overflow: "auto", boxSizing: "border-box" }}>
+            <h2>Search</h2> 
+            <SearchPanel />
+            <hr />
+            <h2>Filters</h2>
+            <FilterPanel />
+          </aside>
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+          <main style={{ position: "relative", overflow: "hidden" }}>
+            <MapView />
+          </main>
+          
+          <aside style={{ borderLeft: "1px solid #ddd", padding: 12, overflow: "auto", boxSizing: "border-box" }}>
+            <h2>Marker Details</h2>
+            <MarkerDetailPanel />
+          </aside>
+        </div>
+    );
 }
-
-export default App

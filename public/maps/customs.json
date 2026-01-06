@@ -2,7 +2,7 @@
     "id": "customs",
     "name": "Customs",
     "gameVersion": "unknown",
-    "imageUrl": "/public/maps/customs.jpg",
+    "imageUrl": "/maps/customs.jpg",
     "widthPx": 6146,
     "heightPx": 2775,
     "boundsMinX": 0,

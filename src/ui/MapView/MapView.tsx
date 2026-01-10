@@ -7,7 +7,7 @@ import {MarkerController} from "../../domain/MarkerController";
 const loader = new MapAssetLoader();
 const markerController = new MarkerController();
 
-export function MapView()
+export default function MapView()
 {
     const [gameMap, setGameMap] = useState<GameMap | null>(null);
     const [controller, setController] = useState<MapController | null>(null);

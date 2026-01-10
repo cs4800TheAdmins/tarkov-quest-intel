@@ -1,0 +1,92 @@
+[
+  {
+    "id": "marker-1",
+    "name": "Dorms 3 Story",
+    "description": "Point of interest",
+    "x": 2668.3650793650795,
+    "y": 388.2222222222222,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": []
+  },
+  {
+    "id": "marker-2",
+    "name": "Dorms 2 Story",
+    "description": "Point of interest",
+    "x": 2845.3650793650795,
+    "y": 425.2222222222222,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": []
+  },
+  {
+    "id": "marker-3",
+    "name": "New Gas Station",
+    "description": "Point of interest",
+    "x": 3448.3650793650795,
+    "y": 817.2222222222222,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": []
+  },
+  {
+    "id": "marker-4",
+    "name": "Old Construction",
+    "description": "Point of interest",
+    "x": 2347.3650793650795,
+    "y": 1039.2222222222222,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": []
+  },
+  {
+    "id": "marker-5",
+    "name": "Storage",
+    "description": "Point of interest",
+    "x": 1100.3650793650795,
+    "y": 1364.2222222222222,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": []
+  },
+  {
+    "id": "marker-6",
+    "name": "Customs Building (Big Red)",
+    "description": "Point of interest",
+    "x": 1398.3650793650795,
+    "y": 1310.2222222222222,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": []
+  },
+  {
+    "id": "marker-7",
+    "name": "Warehouse Courtyard",
+    "description": "Point of interest",
+    "x": 3416.3650793650795,
+    "y": 1111.2222222222222,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": []
+  },
+  {
+    "id": "marker-8",
+    "name": "Old Gas Station",
+    "description": "Point of interest",
+    "x": 3147.9563492063494,
+    "y": 1530.2777777777776,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": []
+  },
+  {
+    "id": "marker-9",
+    "name": "Warehouse Silos",
+    "description": "Point of interest",
+    "x": 4067.9563492063494,
+    "y": 1245.2777777777776,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": []
+  }
+]

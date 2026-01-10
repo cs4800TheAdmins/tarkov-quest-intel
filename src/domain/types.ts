@@ -1,3 +1,8 @@
+export type Point = {
+    x: number;
+    y: number;
+};
+
 export type Tag = {
     id: string;
     label: string;
@@ -13,6 +18,8 @@ export type Marker = {
     approximationNote?: string;
     isVisible: boolean;
     tags: Tag[];
+    isTemporary: boolean;
+    type: MarkerType;
 }
 
 export type MarkerType = "QuestItem" | "Landmark" | "Extraction" | "BossSpawn" | "KeyLocation" | "Other";
@@ -36,4 +43,5 @@ export type MapState = {
     zoomLevel: number;
     minZoom: number;
     maxZoom: number;
+    isDragging: boolean;
 }

@@ -1,6 +1,7 @@
 [
   {
     "id": "marker-1",
+    "type": "Landmark",
     "name": "Dorms 3 Story",
     "description": "Point of interest",
     "x": 2668.3650793650795,
@@ -11,6 +12,7 @@
   },
   {
     "id": "marker-2",
+    "type": "Landmark",
     "name": "Dorms 2 Story",
     "description": "Point of interest",
     "x": 2845.3650793650795,
@@ -21,6 +23,7 @@
   },
   {
     "id": "marker-3",
+    "type": "Landmark",
     "name": "New Gas Station",
     "description": "Point of interest",
     "x": 3448.3650793650795,
@@ -31,6 +34,7 @@
   },
   {
     "id": "marker-4",
+    "type": "Landmark",
     "name": "Old Construction",
     "description": "Point of interest",
     "x": 2347.3650793650795,
@@ -41,6 +45,7 @@
   },
   {
     "id": "marker-5",
+    "type": "Landmark",
     "name": "Storage",
     "description": "Point of interest",
     "x": 1100.3650793650795,
@@ -51,6 +56,7 @@
   },
   {
     "id": "marker-6",
+    "type": "Landmark",
     "name": "Customs Building (Big Red)",
     "description": "Point of interest",
     "x": 1398.3650793650795,
@@ -61,6 +67,7 @@
   },
   {
     "id": "marker-7",
+    "type": "Landmark",
     "name": "Warehouse Courtyard",
     "description": "Point of interest",
     "x": 3416.3650793650795,
@@ -71,6 +78,7 @@
   },
   {
     "id": "marker-8",
+    "type": "Landmark",
     "name": "Old Gas Station",
     "description": "Point of interest",
     "x": 3147.9563492063494,
@@ -81,6 +89,7 @@
   },
   {
     "id": "marker-9",
+    "type": "Landmark",
     "name": "Warehouse Silos",
     "description": "Point of interest",
     "x": 4067.9563492063494,

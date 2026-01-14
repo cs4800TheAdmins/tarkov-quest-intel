@@ -17,3 +17,13 @@ cd tarkov-quest-intel
 npm install
 npm run dev
 ```
+
+### Data Synchronization
+
+The application uses map marker data from the Tarkov.dev API. To sync the latest marker data:
+
+```bash
+npm run sync:map
+```
+
+This script fetches the latest Customs map markers from the Tarkov.dev GraphQL API and writes them to [public/maps/markers.customs.json](public/maps/markers.customs.json). Run this command whenever you need to update the marker data with the latest information from the API.

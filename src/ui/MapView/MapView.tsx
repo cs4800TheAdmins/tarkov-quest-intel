@@ -13,9 +13,10 @@ type MapViewProps = {
     selectedMarkerId: string | null;
     onMarkerClick: (marker: Marker) => void;
     zoomOnMarkerRequest?: number;
+    rightPanelCollapsed: boolean;
 };
 
-export default function MapView({ markers, selectedMarkerId, onMarkerClick, zoomOnMarkerRequest }: MapViewProps) {
+export default function MapView({ markers, selectedMarkerId, onMarkerClick, zoomOnMarkerRequest, rightPanelCollapsed }: MapViewProps) {
     const [gameMap, setGameMap] = useState<GameMap | null>(null);
     const [error, setError] = useState<string | null>(null);
     const [zoom, setZoom] = useState(DEFAULT_ZOOM);
@@ -116,6 +117,17 @@ export default function MapView({ markers, selectedMarkerId, onMarkerClick, zoom
         setZoom(0.5);
     }, [zoomOnMarkerRequest]);
 
+    // Mouse wheel zoom
+    const handleWheel = useCallback((e: React.WheelEvent) => {
+        e.preventDefault();
+
+        const delta = -e.deltaY * 0.001;
+        setZoom(prevZoom => {
+            const newZoom = prevZoom + delta;
+            return Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, newZoom));
+        });
+    }, []);
+
     if (error) {
         return (
             <div style={{ color: "#fff", padding: "20px", textAlign: "center" }}>
@@ -134,12 +146,12 @@ export default function MapView({ markers, selectedMarkerId, onMarkerClick, zoom
 
     
     return (
-        <div 
+        <div
             ref={containerRef}
-            style={{ 
-                width: "100%", 
-                height: "100%", 
-                position: "relative", 
+            style={{
+                width: "100%",
+                height: "100%",
+                position: "relative",
                 background: "#111",
                 overflow: "hidden",
                 cursor: isDragging ? "grabbing" : "grab",
@@ -147,18 +159,20 @@ export default function MapView({ markers, selectedMarkerId, onMarkerClick, zoom
             }}
             onMouseDown={handleMouseDown}
             onDragStart={(e) => e.preventDefault()}
+            onWheel={handleWheel}
         >
 
             {/* Zoom Controls */}
             <div style={{
                 position: "fixed",
                 bottom: 20,
-                right: 20,
+                right: rightPanelCollapsed ? 20 : "calc(22vw + 20px)",
                 zIndex: 5,
                 display: "flex",
                 flexDirection: "column",
                 gap: 8,
                 pointerEvents: "auto",
+                transition: "right 0.3s ease",
             }}>
                 <button
                     onClick={() => setZoom(prevZoom => Math.min(MAX_ZOOM, prevZoom + 0.1))}
@@ -262,10 +276,14 @@ export default function MapView({ markers, selectedMarkerId, onMarkerClick, zoom
                 {markers.map(marker => {
                     const isSelected = marker.id === selectedMarkerId;
                     const baseColor = isSelected
-                        ? "#27e4f5"
-                        : (marker.isTemporary ? "#be95be" : "#33fc19");
+                        ? "#3b82f6"
+                        : (marker.isTemporary ? "#a855f7" : "#fbbf24");
+                    const glowColor = isSelected
+                        ? "rgba(59, 130, 246, 0.6)"
+                        : (marker.isTemporary ? "rgba(168, 85, 247, 0.5)" : "rgba(251, 191, 36, 0.6)");
+
                     return (
-                        <button
+                        <div
                             key={marker.id}
                             onMouseDown={(e) => e.stopPropagation()}
                             onClick={(e) =>  {
@@ -278,16 +296,43 @@ export default function MapView({ markers, selectedMarkerId, onMarkerClick, zoom
                                 left: marker.x,
                                 top: marker.y,
                                 transform: "translate(-50%, -100%)",
-                                width: 0,
-                                height: 0,
-                                borderLeft: "26px solid transparent",
-                                borderRight: "26px solid transparent",
-                                borderTop: `52px solid ${baseColor}`,
-                                background: "transparent",
                                 cursor: "pointer",
-                                padding: 0,
+                                filter: `drop-shadow(0 0 ${isSelected ? '8px' : '4px'} ${glowColor}) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))`,
+                                transition: "filter 0.2s ease",
                             }}
-                        />
+                        >
+                            <svg
+                                width="32"
+                                height="40"
+                                viewBox="0 0 32 40"
+                                style={{
+                                    display: "block",
+                                }}
+                            >
+                                <defs>
+                                    <linearGradient id={`gradient-${marker.id}`} x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" style={{ stopColor: baseColor, stopOpacity: 1 }} />
+                                        <stop offset="100%" style={{ stopColor: baseColor, stopOpacity: 0.8 }} />
+                                    </linearGradient>
+                                </defs>
+                                <path
+                                    d="M16 0 L32 28 L16 40 L0 28 Z"
+                                    fill={`url(#gradient-${marker.id})`}
+                                    stroke="white"
+                                    strokeWidth={isSelected ? "2.5" : "1.5"}
+                                    strokeOpacity={isSelected ? "1" : "0.9"}
+                                />
+                                {isSelected && (
+                                    <circle
+                                        cx="16"
+                                        cy="14"
+                                        r="4"
+                                        fill="white"
+                                        opacity="0.9"
+                                    />
+                                )}
+                            </svg>
+                        </div>
                     );
                 })}
             </div>

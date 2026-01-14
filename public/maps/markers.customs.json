@@ -1,206 +1,1889 @@
 [
   {
-    "id": "landmark-1",
-    "type": "Landmark",
-    "name": "Dorms 3 Story",
-    "description": "Point of interest",
-    "x": 2668.37,
-    "y": 388.22,
+    "id": "d0781374be523027a2a8e1edf6fe08449c45c382",
+    "name": "ZB-013",
+    "description": "Customs Extract Point",
+    "x": 2757,
+    "y": 1452,
     "isApproximate": false,
     "isVisible": true,
-    "tags": [],
-    "isTemporary": false
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
   },
   {
-    "id": "landmark-2",
-    "type": "Landmark",
-    "name": "Dorms 2 Story",
-    "description": "Point of interest",
-    "x": 2845.37,
-    "y": 425.22,
+    "id": "feafaf9787defedcb6b7ea3da97f342870bc8073",
+    "name": "Dorms V-Ex",
+    "description": "Customs Extract Point",
+    "x": 2652,
+    "y": 201,
     "isApproximate": false,
     "isVisible": true,
-    "tags": [],
-    "isTemporary": false
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
   },
   {
-    "id": "landmark-3",
-    "type": "Landmark",
-    "name": "New Gas Station",
-    "description": "Point of interest",
-    "x": 3448.37,
-    "y": 817.22,
-    "isApproximate": false,
-    "isVisible": true,
-    "tags": [],
-    "isTemporary": false
-  },
-  {
-    "id": "landmark-4",
-    "type": "Landmark",
-    "name": "Old Construction",
-    "description": "Point of interest",
-    "x": 2347.37,
-    "y": 1039.22,
-    "isApproximate": false,
-    "isVisible": true,
-    "tags": [],
-    "isTemporary": false
-  },
-  {
-    "id": "landmark-5",
-    "type": "Landmark",
-    "name": "Storage",
-    "description": "Point of interest",
-    "x": 1100.37,
-    "y": 1364.22,
-    "isApproximate": false,
-    "isVisible": true,
-    "tags": [],
-    "isTemporary": false
-  },
-  {
-    "id": "landmark-6",
-    "type": "Landmark",
-    "name": "Customs Building (Big Red)",
-    "description": "Point of interest",
-    "x": 1398.37,
-    "y": 1310.22,
-    "isApproximate": false,
-    "isVisible": true,
-    "tags": [],
-    "isTemporary": false
-  },
-  {
-    "id": "landmark-7",
-    "type": "Landmark",
-    "name": "Warehouse Courtyard",
-    "description": "Point of interest",
-    "x": 3416.37,
-    "y": 1111.22,
-    "isApproximate": false,
-    "isVisible": true,
-    "tags": [],
-    "isTemporary": false
-  },
-  {
-    "id": "landmark-8",
-    "type": "Landmark",
-    "name": "Old Gas Station",
-    "description": "Point of interest",
-    "x": 3147.96,
-    "y": 1530.28,
-    "isApproximate": false,
-    "isVisible": true,
-    "tags": [],
-    "isTemporary": false
-  },
-  {
-    "id": "landmark-9",
-    "type": "Landmark",
-    "name": "Warehouse Silos",
-    "description": "Point of interest",
-    "x": 4067.96,
-    "y": 1245.28,
-    "isApproximate": false,
-    "isVisible": true,
-    "tags": [],
-    "isTemporary": false
-  },
-  {
-    "id": "extract-1",
-    "type": "Extraction",
-    "name": "Crossroads",
-    "description": "Extraction point",
-    "x": 953.33,
-    "y": 1229.71,
-    "isApproximate": false,
-    "isVisible": true,
-    "tags": [],
-    "isTemporary": false
-  },
-  {
-    "id": "extract-2",
-    "type": "Extraction",
-    "name": "Railroad To Port",
-    "description": "Extraction point",
-    "x": 1940.1,
-    "y": 508.7,
-    "isApproximate": false,
-    "isVisible": true,
-    "tags": [],
-    "isTemporary": false
-  },
-  {
-    "id": "extract-3",
-    "type": "Extraction",
-    "name": "Administration Gate",
-    "description": "Extraction point",
-    "x": 4318.6,
-    "y": 1113.67,
-    "isApproximate": false,
-    "isVisible": true,
-    "tags": [],
-    "isTemporary": false
-  },
-  {
-    "id": "extract-4",
-    "type": "Extraction",
-    "name": "Factory Far Corner",
-    "description": "Extraction point",
-    "x": 4268.6,
-    "y": 1482.67,
-    "isApproximate": false,
-    "isVisible": true,
-    "tags": [],
-    "isTemporary": false
-  },
-  {
-    "id": "extract-5",
-    "type": "Extraction",
+    "id": "02cdf102e32c481d3b5fabcf1dcf3df3962522bb",
     "name": "ZB-1011",
-    "description": "Extraction point",
-    "x": 4104.6,
-    "y": 1394.67,
+    "description": "Customs Extract Point",
+    "x": 4163,
+    "y": 1369,
     "isApproximate": false,
     "isVisible": true,
-    "tags": [],
-    "isTemporary": false
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
   },
   {
-    "id": "extract-6",
-    "type": "Extraction",
-    "name": "Scav Checkpoint",
-    "description": "Extraction point",
-    "x": 4011.6,
-    "y": 988.67,
+    "id": "7c993e82fe52ccedbdf9591f92e3bf9fe4352a4e",
+    "name": "Crossroads",
+    "description": "Customs Extract Point",
+    "x": 956,
+    "y": 1229,
     "isApproximate": false,
     "isVisible": true,
-    "tags": [],
-    "isTemporary": false
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
   },
   {
-    "id": "extract-7",
-    "type": "Extraction",
-    "name": "Old Gas Station Gate",
-    "description": "Extraction point",
-    "x": 3098.55,
-    "y": 1605.13,
+    "id": "e0e61c2ed23ae5387b02dfc1acb88dab0c83ff95",
+    "name": "Old Gas Station",
+    "description": "Customs Extract Point",
+    "x": 3123,
+    "y": 1525,
     "isApproximate": false,
     "isVisible": true,
-    "tags": [],
-    "isTemporary": false
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
   },
   {
-    "id": "extract-8",
-    "type": "Extraction",
+    "id": "0df2e62edcfb6e0f1c36fd7be585a5850dd83eed",
+    "name": "Trailer Park",
+    "description": "Customs Extract Point",
+    "x": 1042,
+    "y": 1725,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
+  },
+  {
+    "id": "b113904d09c836e3b6fb937ebd1201f30a5900e6",
+    "name": "RUAF Roadblock",
+    "description": "Customs Extract Point",
+    "x": 2048,
+    "y": 1402,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
+  },
+  {
+    "id": "372308f8ae6c385c1a1397bf925af53847545a7d",
+    "name": "Military Base CP",
+    "description": "Customs Extract Point",
+    "x": 4214,
+    "y": 497,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
+  },
+  {
+    "id": "de953d179a503c836b89f8497600c448b1d7067d",
+    "name": "Passage Between Rocks",
+    "description": "Customs Extract Point",
+    "x": 3853,
+    "y": 246,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
+  },
+  {
+    "id": "7097325dad6b074566fc1e7744d8490151b001e7",
+    "name": "Railroad to Military Base",
+    "description": "Customs Extract Point",
+    "x": 3682,
+    "y": 174,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
+  },
+  {
+    "id": "977d435f5b1510a2fe4d662a8fc30d7cc19bd90c",
+    "name": "Old Road Gate",
+    "description": "Customs Extract Point",
+    "x": 2654,
+    "y": 199,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
+  },
+  {
+    "id": "d048daa472b3806f452fdb3d4991032bab4366d5",
+    "name": "Sniper Roadblock",
+    "description": "Customs Extract Point",
+    "x": 2105,
+    "y": 498,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
+  },
+  {
+    "id": "90ab07a4eacd76a88ae6a51bf8c2f17c92828691",
+    "name": "Railroad to Port",
+    "description": "Customs Extract Point",
+    "x": 1563,
+    "y": 769,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
+  },
+  {
+    "id": "606fa68466f40d1d349f443bd89df5934097ceaa",
+    "name": "Trailer Park Workers' Shack",
+    "description": "Customs Extract Point",
+    "x": 1260,
+    "y": 1724,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
+  },
+  {
+    "id": "299a91e6562ad4d55747ac15f15c9e8608cff9d4",
+    "name": "Railroad to Tarkov",
+    "description": "Customs Extract Point",
+    "x": 1543,
+    "y": 1671,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
+  },
+  {
+    "id": "8574c32eb626a3e230f454d65b9262d4f9e9fbf8",
+    "name": "RUAF Roadblock",
+    "description": "Customs Extract Point",
+    "x": 2051,
+    "y": 1403,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
+  },
+  {
+    "id": "1bcdc243701067f1469ee4d177ddde7c53aaecb6",
+    "name": "Warehouse 17",
+    "description": "Customs Extract Point",
+    "x": 2245,
+    "y": 1168,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
+  },
+  {
+    "id": "8194ee54571a0670e4d5bd0a02bdcb1cbb77a03e",
+    "name": "Factory Shacks",
+    "description": "Customs Extract Point",
+    "x": 2756,
+    "y": 918,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
+  },
+  {
+    "id": "3fd0602903f1971d6930874e8f6cd4d754bceb58",
     "name": "Warehouse 4",
-    "description": "Extraction point",
-    "x": 3219.55,
-    "y": 1020.53,
+    "description": "Customs Extract Point",
+    "x": 3215,
+    "y": 1018,
     "isApproximate": false,
     "isVisible": true,
-    "tags": [],
-    "isTemporary": false
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
+  },
+  {
+    "id": "00e4ba8e84314ddf6878090f2e7d3aaddcb43f53",
+    "name": "Old Gas Station Gate",
+    "description": "Customs Extract Point",
+    "x": 3096,
+    "y": 1608,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
+  },
+  {
+    "id": "f162159cfa266422af986074b4397587616effcb",
+    "name": "Factory Far Corner",
+    "description": "Customs Extract Point",
+    "x": 4270,
+    "y": 1478,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
+  },
+  {
+    "id": "988603509e1d1a6d59642e9b6c4514386416053f",
+    "name": "Administration Gate",
+    "description": "Customs Extract Point",
+    "x": 4322,
+    "y": 1117,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
+  },
+  {
+    "id": "b051486cb850a811e354ac34b2ec5790bd2a12c5",
+    "name": "Railroad Passage (Flare)",
+    "description": "Customs Extract Point",
+    "x": 2570,
+    "y": 2038,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
+  },
+  {
+    "id": "cbb161149bdb3062b2a27447fbc804385948f671",
+    "name": "Scav Checkpoint",
+    "description": "Customs Extract Point",
+    "x": 4256,
+    "y": 1023,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
+  },
+  {
+    "id": "88192ee8ec04e9844e35f327d441b74987a182bd",
+    "name": "Boiler Room Basement (Co-op)",
+    "description": "Customs Extract Point",
+    "x": 2409,
+    "y": 1081,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
+  },
+  {
+    "id": "311ae28f72d9c9fe3be801b2d503088167e325c3",
+    "name": "Smugglers' Boat",
+    "description": "Customs Extract Point",
+    "x": 1916,
+    "y": 510,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
+  },
+  {
+    "id": "908b7d419bb7152858c973b561a1ee7ed5f55a81",
+    "name": "Smugglers' Bunker (ZB-1012)",
+    "description": "Customs Extract Point",
+    "x": 3631,
+    "y": 1314,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "extraction",
+        "label": "Extraction"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Extraction"
+  },
+  {
+    "id": "bossspawn-9",
+    "name": "Boss Spawn: ZoneDormitory",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 2655,
+    "y": 321,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-11",
+    "name": "Boss Spawn: ZoneScavBase",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 3032,
+    "y": 1108,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-13",
+    "name": "Boss Spawn: ZoneGasStation",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 3474,
+    "y": 853,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-15",
+    "name": "Boss Spawn: ZoneBrige",
+    "description": "Boss Spawn Area. Contains categories: boss.",
+    "x": 2188,
+    "y": 1098,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-27",
+    "name": "Boss Spawn: ZoneScavBase",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 2778,
+    "y": 1329,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-30",
+    "name": "Boss Spawn: ZoneDormitory",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 2637,
+    "y": 408,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-37",
+    "name": "Boss Spawn: ZoneCustoms",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 1473,
+    "y": 1578,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-43",
+    "name": "Boss Spawn: ZoneScavBase",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 2736,
+    "y": 1360,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-44",
+    "name": "Boss Spawn: ZoneGasStation",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 3447,
+    "y": 930,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-51",
+    "name": "Boss Spawn: ZoneGasStation",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 3505,
+    "y": 743,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-54",
+    "name": "Boss Spawn: ZoneScavBase",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 2503,
+    "y": 1428,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-61",
+    "name": "Boss Spawn: ZoneBlockPost",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 3976,
+    "y": 1017,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-72",
+    "name": "Boss Spawn: ZoneScavBase",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 2975,
+    "y": 1120,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-75",
+    "name": "Boss Spawn: ZoneGasStation",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 3472,
+    "y": 598,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-77",
+    "name": "Boss Spawn: ZoneScavBase",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 3025,
+    "y": 1169,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-86",
+    "name": "Boss Spawn: ZoneCrossRoad",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 2781,
+    "y": 259,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-95",
+    "name": "Boss Spawn: ZoneGasStation",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 3555,
+    "y": 551,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-100",
+    "name": "Boss Spawn: ZoneScavBase",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 3000,
+    "y": 1125,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-115",
+    "name": "Boss Spawn: ZoneScavBase",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 2739,
+    "y": 1510,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-117",
+    "name": "Boss Spawn: ZoneGasStation",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 3585,
+    "y": 721,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-124",
+    "name": "Boss Spawn: ZoneDormitory",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 2625,
+    "y": 341,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-126",
+    "name": "Boss Spawn: ZoneScavBase",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 2972,
+    "y": 1186,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-128",
+    "name": "Boss Spawn: ZoneFactorySide",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 4279,
+    "y": 1492,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-150",
+    "name": "Boss Spawn: ZoneCustoms",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 1502,
+    "y": 1087,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-152",
+    "name": "Boss Spawn: ZoneScavBase",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 2426,
+    "y": 1321,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-156",
+    "name": "Boss Spawn: ZoneDormitory",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 2669,
+    "y": 305,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-174",
+    "name": "Boss Spawn: ZoneGasStation",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 3465,
+    "y": 736,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-176",
+    "name": "Boss Spawn: ZoneDormitory",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 2629,
+    "y": 392,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-178",
+    "name": "Boss Spawn: ZoneGasStation",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 3483,
+    "y": 785,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-191",
+    "name": "Boss Spawn: ZoneDormitory",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 2647,
+    "y": 310,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-199",
+    "name": "Boss Spawn: ZoneFactorySide",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 4044,
+    "y": 1150,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-200",
+    "name": "Boss Spawn: ZoneFactorySide",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 4278,
+    "y": 1132,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-203",
+    "name": "Boss Spawn: ZoneScavBase",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 2434,
+    "y": 1319,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-213",
+    "name": "Boss Spawn: ZoneScavBase",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 2340,
+    "y": 1298,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-233",
+    "name": "Boss Spawn: ZoneCustoms",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 1540,
+    "y": 1276,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-242",
+    "name": "Boss Spawn: ZoneDormitory",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 2463,
+    "y": 488,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-250",
+    "name": "Boss Spawn: ZoneGasStation",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 3627,
+    "y": 725,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-251",
+    "name": "Boss Spawn: ZoneFactorySide",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 4300,
+    "y": 1270,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-253",
+    "name": "Boss Spawn: ZoneScavBase",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 2223,
+    "y": 1420,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-256",
+    "name": "Boss Spawn: ZoneFactorySide",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 3882,
+    "y": 1377,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "bossspawn-266",
+    "name": "Boss Spawn: ZoneCrossRoad",
+    "description": "Boss Spawn Area. Contains categories: player, bot, boss.",
+    "x": 2813,
+    "y": 515,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "bossspawn",
+        "label": "Boss Spawn"
+      }
+    ],
+    "isTemporary": false,
+    "type": "BossSpawn"
+  },
+  {
+    "id": "9",
+    "name": "To Reserve",
+    "description": "Transit to Reserve",
+    "x": 4238,
+    "y": 505,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "transit",
+        "label": "Transit"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Other"
+  },
+  {
+    "id": "10",
+    "name": "To Factory",
+    "description": "Transit to Factory",
+    "x": 3275,
+    "y": 1579,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "transit",
+        "label": "Transit"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Other"
+  },
+  {
+    "id": "11",
+    "name": "To Interchange",
+    "description": "Transit to Interchange",
+    "x": 967,
+    "y": 1631,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "transit",
+        "label": "Transit"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Other"
+  },
+  {
+    "id": "42",
+    "name": "To Shoreline",
+    "description": "Transit to Shoreline",
+    "x": 2132,
+    "y": 453,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "transit",
+        "label": "Transit"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Other"
+  },
+  {
+    "id": "5da743f586f7744014504f72",
+    "name": "USEC stash key",
+    "description": "Lock - Key: USEC stash key",
+    "x": 3978,
+    "y": 1104,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "5da743f586f7744014504f72",
+    "name": "USEC stash key",
+    "description": "Lock - Key: USEC stash key",
+    "x": 3959,
+    "y": 1131,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "5780d0532459777a5108b9a2",
+    "name": "Tarcone Director's office key",
+    "description": "Lock - Key: Tarcone Director's office key",
+    "x": 1391,
+    "y": 1304,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "5913611c86f77479e0084092",
+    "name": "Trailer park portable cabin key",
+    "description": "Lock - Key: Trailer park portable cabin key",
+    "x": 1438,
+    "y": 1637,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "5780d07a2459777de4559324",
+    "name": "Portable cabin key",
+    "description": "Lock - Key: Portable cabin key",
+    "x": 1249,
+    "y": 1686,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "5448ba0b4bdc2d02308b456c",
+    "name": "Factory emergency exit key",
+    "description": "Lock - Key: Factory emergency exit key",
+    "x": 3262,
+    "y": 980,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "593962ca86f774068014d9af",
+    "name": "Unknown key",
+    "description": "Lock - Key: Unknown key",
+    "x": 3313,
+    "y": 1101,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "5448ba0b4bdc2d02308b456c",
+    "name": "Factory emergency exit key",
+    "description": "Lock - Key: Factory emergency exit key",
+    "x": 3264,
+    "y": 957,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "5938603e86f77435642354f4",
+    "name": "Dorm room 206 key",
+    "description": "Lock - Key: Dorm room 206 key",
+    "x": 2826,
+    "y": 456,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "591382d986f774465a6413a7",
+    "name": "Dorm room 105 key",
+    "description": "Lock - Key: Dorm room 105 key",
+    "x": 2817,
+    "y": 466,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "59136e1e86f774432f15d133",
+    "name": "Dorm room 110 key",
+    "description": "Lock - Key: Dorm room 110 key",
+    "x": 2825,
+    "y": 385,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "591383f186f7744a4c5edcf3",
+    "name": "Dorm room 104 key",
+    "description": "Lock - Key: Dorm room 104 key",
+    "x": 2824,
+    "y": 469,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "59387a4986f77401cc236e62",
+    "name": "Dorm room 114 key",
+    "description": "Lock - Key: Dorm room 114 key",
+    "x": 2833,
+    "y": 384,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "59136a4486f774447a1ed172",
+    "name": "Dorm guard desk key",
+    "description": "Lock - Key: Dorm guard desk key",
+    "x": 2808,
+    "y": 457,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "5780cf692459777de4559321",
+    "name": "Dorm room 315 key",
+    "description": "Lock - Key: Dorm room 315 key",
+    "x": 2650,
+    "y": 333,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "5780cf722459777a5108b9a1",
+    "name": "Dorm room 308 key",
+    "description": "Lock - Key: Dorm room 308 key",
+    "x": 2643,
+    "y": 320,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "5780cf7f2459777de4559322",
+    "name": "Dorm room 314 marked key",
+    "description": "Lock - Key: Dorm room 314 marked key",
+    "x": 2653,
+    "y": 302,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "5672c92d4bdc2d180f8b4567",
+    "name": "Dorm room 118 key",
+    "description": "Lock - Key: Dorm room 118 key",
+    "x": 2702,
+    "y": 333,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "5780cfa52459777dfb276eb1",
+    "name": "Dorm room 220 key",
+    "description": "Lock - Key: Dorm room 220 key",
+    "x": 2699,
+    "y": 333,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "5938504186f7740991483f30",
+    "name": "Dorm room 203 key",
+    "description": "Lock - Key: Dorm room 203 key",
+    "x": 2641,
+    "y": 416,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "59148c8a86f774197930e983",
+    "name": "Dorm room 204 key",
+    "description": "Lock - Key: Dorm room 204 key",
+    "x": 2632,
+    "y": 416,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "593aa4be86f77457f56379f8",
+    "name": "Dorm room 303 key",
+    "description": "Lock - Key: Dorm room 303 key",
+    "x": 2641,
+    "y": 416,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "5914578086f774123569ffa4",
+    "name": "Dorm room 108 key",
+    "description": "Lock - Key: Dorm room 108 key",
+    "x": 2643,
+    "y": 320,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "5780cda02459777b272ede61",
+    "name": "Dorm room 306 key",
+    "description": "Lock - Key: Dorm room 306 key",
+    "x": 2636,
+    "y": 392,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "664d4b0103ef2c61246afb56",
+    "name": "Dorm overseer key",
+    "description": "Lock - Key: Dorm overseer key",
+    "x": 2646,
+    "y": 365,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "5938994586f774523a425196",
+    "name": "Dorm room 103 key",
+    "description": "Lock - Key: Dorm room 103 key",
+    "x": 2640,
+    "y": 419,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "5780cf942459777df90dcb72",
+    "name": "Dorm room 214 key",
+    "description": "Lock - Key: Dorm room 214 key",
+    "x": 2645,
+    "y": 302,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "5780cf9e2459777df90dcb73",
+    "name": "Dorm room 218 key",
+    "description": "Lock - Key: Dorm room 218 key",
+    "x": 2686,
+    "y": 331,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "5913877a86f774432f15d444",
+    "name": "Gas station storage room key",
+    "description": "Lock - Key: Gas station storage room key",
+    "x": 3456,
+    "y": 808,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "5780d0652459777df90dcb74",
+    "name": "Gas station office key",
+    "description": "Lock - Key: Gas station office key",
+    "x": 3456,
+    "y": 798,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "6761a6f90575f25e020816a4",
+    "name": "Company director's room key",
+    "description": "Lock - Key: Company director's room key",
+    "x": 2396,
+    "y": 1129,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "5448ba0b4bdc2d02308b456c",
+    "name": "Factory emergency exit key",
+    "description": "Lock - Key: Factory emergency exit key",
+    "x": 2750,
+    "y": 1429,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "5938144586f77473c2087145",
+    "name": "Portable bunkhouse key",
+    "description": "Lock - Key: Portable bunkhouse key",
+    "x": 2745,
+    "y": 889,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "5937ee6486f77408994ba448",
+    "name": "Machinery key",
+    "description": "Lock - Key: Machinery key",
+    "x": 2409,
+    "y": 948,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "keylocation",
+        "label": "Key Location"
+      }
+    ],
+    "isTemporary": false,
+    "type": "KeyLocation"
+  },
+  {
+    "id": "hazard-0",
+    "name": "Sniper",
+    "description": "Hazard - Type: sniper",
+    "x": 2614,
+    "y": 1810,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "landmark",
+        "label": "Landmark"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Landmark"
+  },
+  {
+    "id": "hazard-1",
+    "name": "Sniper",
+    "description": "Hazard - Type: sniper",
+    "x": 2673,
+    "y": 1902,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "landmark",
+        "label": "Landmark"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Landmark"
+  },
+  {
+    "id": "hazard-2",
+    "name": "Sniper",
+    "description": "Hazard - Type: sniper",
+    "x": 2752,
+    "y": 1910,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "landmark",
+        "label": "Landmark"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Landmark"
+  },
+  {
+    "id": "hazard-3",
+    "name": "Landmine",
+    "description": "Hazard - Type: minefield",
+    "x": 2219,
+    "y": 290,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "landmark",
+        "label": "Landmark"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Landmark"
+  },
+  {
+    "id": "hazard-4",
+    "name": "Landmine",
+    "description": "Hazard - Type: minefield",
+    "x": 1982,
+    "y": 84,
+    "isApproximate": false,
+    "isVisible": true,
+    "tags": [
+      {
+        "id": "landmark",
+        "label": "Landmark"
+      }
+    ],
+    "isTemporary": false,
+    "type": "Landmark"
   }
 ]

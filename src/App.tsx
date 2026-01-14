@@ -6,7 +6,7 @@ import MarkerDetailPanel from "./ui/panels/MarkerDetailPanel";
 import type { Marker, MarkerType } from "./domain/types";
 import { MarkerController } from "./domain/MarkerController";
 
-const PANEL_WIDTH = "33.33vw";
+const PANEL_WIDTH = "22vw";
 const ALL_TYPES: MarkerType[] = ["QuestItem", "Landmark", "Extraction", "BossSpawn", "KeyLocation", "Other"];
 
 const markerController = new MarkerController();
@@ -88,11 +88,12 @@ export default function App() {
                     setRightPanelCollapsed(false);
                   }}
                   zoomOnMarkerRequest={zoomOnMarkerRequest}
+                  rightPanelCollapsed={rightPanelCollapsed}
                 />
             </div>
 
             {/* Left Panel - Search */}
-            <aside style={{ 
+            <aside style={{
                 position: "fixed",
                 top: 0,
                 left: leftPanelCollapsed ? `-${PANEL_WIDTH}` : "0",
@@ -102,7 +103,7 @@ export default function App() {
                 padding: "16px",
                 overflow: "auto",
                 boxSizing: "border-box",
-                backgroundColor: "rgba(255, 255, 255, 0.95)",
+                backgroundColor: "rgba(255, 255, 255, 0.75)",
                 backdropFilter: "blur(10px)",
                 zIndex: 10,
                 transition: "left 0.3s ease",
@@ -164,7 +165,7 @@ export default function App() {
                         top: "50%",
                         left: "0",
                         transform: "translateY(-50%)",
-                        background: "rgba(255, 255, 255, 0.95)",
+                        background: "rgba(255, 255, 255, 0.8)",
                         backdropFilter: "blur(10px)",
                         border: "1px solid #ddd",
                         borderLeft: "none",
@@ -191,7 +192,7 @@ export default function App() {
             )}
 
             {/* Right Panel - Marker Details */}
-            <aside style={{ 
+            <aside style={{
                 position: "fixed",
                 top: 0,
                 right: rightPanelCollapsed ? `-${PANEL_WIDTH}` : "0",
@@ -201,7 +202,7 @@ export default function App() {
                 padding: "16px",
                 overflow: "auto",
                 boxSizing: "border-box",
-                backgroundColor: "rgba(255, 255, 255, 0.95)",
+                backgroundColor: "rgba(255, 255, 255, 0.75)",
                 backdropFilter: "blur(10px)",
                 zIndex: 10,
                 transition: "right 0.3s ease",
@@ -244,7 +245,7 @@ export default function App() {
                         top: "50%",
                         right: "0",
                         transform: "translateY(-50%)",
-                        background: "rgba(255, 255, 255, 0.95)",
+                        background: "rgba(255, 255, 255, 0.85)",
                         backdropFilter: "blur(10px)",
                         border: "1px solid #ddd",
                         borderRight: "none",

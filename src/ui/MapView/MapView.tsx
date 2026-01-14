@@ -4,7 +4,7 @@ import type { GameMap } from "../../domain/types";
 
 const loader = new MapAssetLoader();
 
-const MIN_ZOOM = 0.2; // 20%
+const MIN_ZOOM = 0.3; // 30%
 const MAX_ZOOM = 3;   // 300%
 const RECENTER_ZOOM = 0.3; // 30%
 

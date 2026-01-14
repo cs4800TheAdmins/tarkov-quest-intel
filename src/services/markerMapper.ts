@@ -121,5 +121,115 @@ export function mapMarkers(map: MapData): Marker[] {
         });
     });
 
+    markers.push({
+        "id": "landmark-1",
+        "type": "Landmark",
+        "name": "Dorms 3 Story",
+        "description": "Point of interest",
+        "x": 2668.37,
+        "y": 388.22,
+        "isApproximate": false,
+        "isVisible": true,
+        "tags": [],
+        "isTemporary": false
+    },
+    {
+        "id": "landmark-2",
+        "type": "Landmark",
+        "name": "Dorms 2 Story",
+        "description": "Point of interest",
+        "x": 2845.37,
+        "y": 425.22,
+        "isApproximate": false,
+        "isVisible": true,
+        "tags": [],
+        "isTemporary": false
+    },
+    {
+        "id": "landmark-3",
+        "type": "Landmark",
+        "name": "New Gas Station",
+        "description": "Point of interest",
+        "x": 3448.37,
+        "y": 817.22,
+        "isApproximate": false,
+        "isVisible": true,
+        "tags": [],
+        "isTemporary": false
+    },
+    {
+        "id": "landmark-4",
+        "type": "Landmark",
+        "name": "Old Construction",
+        "description": "Point of interest",
+        "x": 2347.37,
+        "y": 1039.22,
+        "isApproximate": false,
+        "isVisible": true,
+        "tags": [],
+        "isTemporary": false
+    },
+    {
+        "id": "landmark-5",
+        "type": "Landmark",
+        "name": "Storage",
+        "description": "Point of interest",
+        "x": 1100.37,
+        "y": 1364.22,
+        "isApproximate": false,
+        "isVisible": true,
+        "tags": [],
+        "isTemporary": false
+    },
+    {
+        "id": "landmark-6",
+        "type": "Landmark",
+        "name": "Customs Building (Big Red)",
+        "description": "Point of interest",
+        "x": 1398.37,
+        "y": 1310.22,
+        "isApproximate": false,
+        "isVisible": true,
+        "tags": [],
+        "isTemporary": false
+    },
+    {
+        "id": "landmark-7",
+        "type": "Landmark",
+        "name": "Warehouse Courtyard",
+        "description": "Point of interest",
+        "x": 3416.37,
+        "y": 1111.22,
+        "isApproximate": false,
+        "isVisible": true,
+        "tags": [],
+        "isTemporary": false
+    },
+    {
+        "id": "landmark-8",
+        "type": "Landmark",
+        "name": "Old Gas Station",
+        "description": "Point of interest",
+        "x": 3147.96,
+        "y": 1530.28,
+        "isApproximate": false,
+        "isVisible": true,
+        "tags": [],
+        "isTemporary": false
+    },
+    {
+        "id": "landmark-9",
+        "type": "Landmark",
+        "name": "Warehouse Silos",
+        "description": "Point of interest",
+        "x": 4067.96,
+        "y": 1245.28,
+        "isApproximate": false,
+        "isVisible": true,
+        "tags": [],
+        "isTemporary": false
+    },
+    )
+
     return markers;
 }

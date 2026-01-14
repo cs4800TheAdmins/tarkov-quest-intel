@@ -4,13 +4,9 @@ import path from "node:path";
 import { tarkovDevQuery } from "../src/api/TarkovApiClient.js";
 import { CUSTOMS_MARKERS_QUERY } from "../src/api/tarkovQueries.js";
 import type { QueryResponse } from "../src/api/apiTypes.js";
-//import type { GameMap } from "../src/domain/types.js";
 import { mapMarkers } from "../src/services/markerMapper.js";
 
 async function main() {
-    //const mapPath = path.resolve("/public/maps/customs.json");
-    //const rawMap = fs.readFileSync(mapPath, "utf-8");
-    //const mapData = JSON.parse(rawMap) as GameMap;
 
     const apiData = await tarkovDevQuery<QueryResponse>(CUSTOMS_MARKERS_QUERY);
     const apiMap = apiData.maps?.[0];

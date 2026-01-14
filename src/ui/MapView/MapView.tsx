@@ -1,216 +1,229 @@
-import {useEffect, useRef, useState} from "react";
-import {MapAssetLoader} from "../../data/MapAssetLoader";
-import type {GameMap, Marker} from "../../domain/types";
-import {MapController} from "../../domain/MapController";
-import {MarkerController} from "../../domain/MarkerController";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { MapAssetLoader } from "../../data/MapAssetLoader";
+import type { GameMap } from "../../domain/types";
 
 const loader = new MapAssetLoader();
-const markerController = new MarkerController();
 
-export default function MapView()
-{
+const MIN_ZOOM = 0.2; // 20%
+const MAX_ZOOM = 3;   // 300%
+const RECENTER_ZOOM = 0.3; // 30%
+
+export default function MapView() {
     const [gameMap, setGameMap] = useState<GameMap | null>(null);
-    const [controller, setController] = useState<MapController | null>(null);
-    const [markers, setMarkers] = useState<Marker[]>([]);
-    const [selectedMarker, setSelectedMarker] = useState<Marker | null>(null);
-    const [placingMarker, setPlacingMarker] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const [zoom, setZoom] = useState(1);
 
-    const mapContainer = useRef<HTMLDivElement>(null);
-    const refObject = useRef<number | undefined>(undefined);
-    const [, update] = useState(0);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const isDraggingRef = useRef(false);
+    const dragStartRef = useRef<{ x: number; y: number; scrollLeft: number; scrollTop: number } | null>(null);
+    const [isDraggingUi, setIsDraggingUi] = useState(false);
 
-    const render = () =>
-    {
-        if (!refObject.current) refObject.current = requestAnimationFrame(() =>
-        {
-            update(v => v + 1);
-            refObject.current = undefined;
-        });
-    };
-
-    const localPoint = (x: number, y: number) =>
-    {
-        const rect = mapContainer.current!.getBoundingClientRect();
-        return {x: x - rect.left, y: y - rect.top};
-    };
-
-    const mapPoint = (x: number, y: number) =>
-    {
-        const p = localPoint(x, y);
-        return {
-            x: (p.x - controller!.position.x) / controller!.zoom,
-            y: (p.y - controller!.position.y) / controller!.zoom,
-        };
-    };
-
-    useEffect(() =>
-    {
+    useEffect(() => {
         loader.loadMap("customs")
-            .then(map =>
-            {
-                setGameMap(map);
-                setController(new MapController(map, mapContainer.current?.clientWidth ?? 800, mapContainer.current?.clientHeight ?? 600));
-                return markerController.loadFromJson("/maps/markers.customs.json");
-            })
-            .then(setMarkers)
+            .then(setGameMap)
             .catch(err => setError(err.message || "Failed to load map"));
     }, []);
 
-    useEffect(() =>
-    {
-        if (!controller) return;
-        const resize = () =>
-        {
-            controller.updateContainerSize(mapContainer.current!.clientWidth, mapContainer.current!.clientHeight);
-            render();
+    const scaledSize = useMemo(() => {
+        if (!gameMap) return { width: 0, height: 0 };
+        return {
+            width: Math.max(1, Math.round(gameMap.widthPx * zoom)),
+            height: Math.max(1, Math.round(gameMap.heightPx * zoom)),
         };
-        window.addEventListener("resize", resize);
-        resize();
-        return () => window.removeEventListener("resize", resize);
-    }, [controller]);
+    }, [gameMap, zoom]);
+
+    const clampZoom = (z: number) => Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, z));
+
+    const recenter = () => {
+        const container = containerRef.current;
+        if (!container || !gameMap) return;
+
+        const nextZoom = RECENTER_ZOOM;
+        setZoom(nextZoom);
+
+        // Wait for next paint so scaled size updates, then center scroll.
+        requestAnimationFrame(() => {
+            const c = containerRef.current;
+            if (!c) return;
+
+            const w = Math.max(1, Math.round(gameMap.widthPx * nextZoom));
+            const h = Math.max(1, Math.round(gameMap.heightPx * nextZoom));
+            c.scrollLeft = Math.max(0, (w - c.clientWidth) / 2);
+            c.scrollTop = Math.max(0, (h - c.clientHeight) / 2);
+        });
+    };
+
+    const handleMouseDown = (e: React.MouseEvent) => {
+        if (e.button !== 0) return;
+        const container = containerRef.current;
+        if (!container) return;
+
+        isDraggingRef.current = true;
+        setIsDraggingUi(true);
+        dragStartRef.current = {
+            x: e.clientX,
+            y: e.clientY,
+            scrollLeft: container.scrollLeft,
+            scrollTop: container.scrollTop,
+        };
+        e.preventDefault();
+    };
+
+    const stopDragging = () => {
+        isDraggingRef.current = false;
+        setIsDraggingUi(false);
+        dragStartRef.current = null;
+    };
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        if (!isDraggingRef.current) return;
+        const container = containerRef.current;
+        const start = dragStartRef.current;
+        if (!container || !start) return;
+
+        const dx = e.clientX - start.x;
+        const dy = e.clientY - start.y;
+
+        // Drag map like a hand: move content opposite of mouse movement.
+        container.scrollLeft = start.scrollLeft - dx;
+        container.scrollTop = start.scrollTop - dy;
+    };
+
+    const zoomBy = (delta: number) => {
+        const container = containerRef.current;
+        if (!container || !gameMap) {
+            setZoom(z => clampZoom(z + delta));
+            return;
+        }
+
+        // Preserve viewport center while zooming.
+        const centerX = container.scrollLeft + container.clientWidth / 2;
+        const centerY = container.scrollTop + container.clientHeight / 2;
+
+        const prevZoom = zoom;
+        const nextZoom = clampZoom(prevZoom + delta);
+        if (nextZoom === prevZoom) return;
+
+        const scale = nextZoom / prevZoom;
+        setZoom(nextZoom);
+
+        requestAnimationFrame(() => {
+            const c = containerRef.current;
+            if (!c) return;
+            c.scrollLeft = Math.max(0, centerX * scale - c.clientWidth / 2);
+            c.scrollTop = Math.max(0, centerY * scale - c.clientHeight / 2);
+        });
+    };
 
     if (error) return <div>Error loading map: {error}</div>;
-    if (!gameMap || !controller) return <div>Loading map...</div>;
-
-    const handleMouseDown = (e: React.MouseEvent) =>
-    {
-        if (placingMarker)
-        {
-            const pos = mapPoint(e.clientX, e.clientY);
-            const newMarker = markerController.placeMarker(pos.x, pos.y, {name: "New Marker", description: "Temporary marker", isTemporary: true});
-            setMarkers([...markerController.getMarkers()]);
-            setSelectedMarker(newMarker);
-            setPlacingMarker(false);
-        } else
-        {
-            e.preventDefault();
-            const p = localPoint(e.clientX, e.clientY);
-            controller.onMouseDown(p.x, p.y);
-            render();
-        }
-    };
-
-    const handleMouseMove = (e: React.MouseEvent) =>
-    {
-        const {x, y} = localPoint(e.clientX, e.clientY);
-        controller.onMouseMove(x, y);
-        render();
-    };
-
-    const handleMouseUp = () =>
-    {
-        controller.onMouseUp();
-        render();
-    };
-
-    const handleWheel = (e: React.WheelEvent) =>
-    {
-        e.preventDefault();
-        const {x, y} = localPoint(e.clientX, e.clientY);
-        controller.onWheel(x, y, e.deltaY);
-        render();
-    };
+    if (!gameMap) return <div>Loading map...</div>;
 
     return (
-        <div style={{display: "flex", height: "100%"}}>
-            <div
-                ref={mapContainer}
-                style={{
-                    position: "relative",
-                    flex: 1,
-                    overflow: "hidden",
-                    background: "#000000",
-                    cursor: controller.dragging ? "grabbing" : "grab",
-                }}
-                onMouseDown={handleMouseDown}
-                onMouseMove={handleMouseMove}
-                onMouseUp={handleMouseUp}
-                onMouseLeave={handleMouseUp}
-                onWheel={handleWheel}
-            >
+        <div
+            ref={containerRef}
+            style={{
+                width: "100%",
+                height: "100%",
+                overflow: "auto",
+                background: "#000",
+                cursor: isDraggingUi ? "grabbing" : "grab",
+                userSelect: "none",
+                position: "relative",
+            }}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={stopDragging}
+            onMouseLeave={stopDragging}
+        >
+            {/* Scroll surface (defines scroll boundaries) */}
+            <div style={{ width: scaledSize.width, height: scaledSize.height, position: "relative" }}>
                 <img
                     src={gameMap.imageUrl}
                     alt={gameMap.name}
                     draggable={false}
                     style={{
+                        width: "100%",
+                        height: "100%",
                         display: "block",
-                        transform: `translate(${controller.position.x}px, ${controller.position.y}px) scale(${controller.zoom})`,
-                        transformOrigin: "top left",
-                        userSelect: "none",
                         pointerEvents: "none",
                     }}
                 />
-
-                {markers.map(marker =>
-                {
-                    const x = controller.position.x + marker.x * controller.zoom;
-                    const y = controller.position.y + marker.y * controller.zoom;
-                    return (
-                        <div
-                            key={marker.id}
-                            onClick={e =>
-                            {
-                                e.stopPropagation();
-                                markerController.selectMarker(marker.id);
-                                setSelectedMarker(marker);
-                            }}
-                            style={{
-                                position: "absolute",
-                                left: x - 6,
-                                top: y - 6,
-                                width: 10,
-                                height: 10,
-                                borderRadius: "50%",
-                                background: marker.isTemporary ? "red" : "#242424",
-                                cursor: "pointer",
-                            }}
-                        />
-                    );
-                })}
-
-                <button style={{position: "absolute", top: 12, right: 12, background: "#242424"}} onClick={() =>
-                {
-                    controller.recenter();
-                    render();
-                }}>Recenter
-                </button>
-
-                <button
-                    style={{
-                        position: "absolute",
-                        top: 48,
-                        right: 12,
-                        background: placingMarker ? "#d93900" : "#242424",
-                        color: "#ffffff",
-                    }}
-                    onClick={() => setPlacingMarker(p => !p)}
-                >
-                    {placingMarker ? "Click map" : "Place Marker"}
-                </button>
             </div>
 
-            {selectedMarker && (
-                <div style={{width: 280, padding: 12, background: "#242424", color: "#ffffff"}}>
-                    <h3>{selectedMarker.name}</h3>
-                    <p>{selectedMarker.description}</p>
-                    {selectedMarker.isApproximate && <p style={{color: "orange"}}>{selectedMarker.approximationNote}</p>}
-                    {selectedMarker.isTemporary && (
-                        <button
-                            style={{marginTop: 8, background: "#d93900", color: "#ffffff"}}
-                            onClick={() =>
-                            {
-                                markerController.deleteMarker(selectedMarker.id);
-                                setMarkers([...markerController.getMarkers()]);
-                                setSelectedMarker(null);
-                            }}
-                        >
-                            Delete Marker
-                        </button>
-                    )}
-                    <button style={{marginTop: 8}} onClick={() => setSelectedMarker(null)}>Close</button>
-                </div>
-            )}
+            {/* Controls: +, O, - bottom-right */}
+            <div
+                style={{
+                    position: "fixed",
+                    bottom: 20,
+                    right: 20,
+                    zIndex: 5,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 8,
+                    pointerEvents: "auto",
+                }}
+            >
+                <button
+                    onClick={() => zoomBy(0.1)}
+                    style={{
+                        width: 40,
+                        height: 40,
+                        fontSize: 20,
+                        backgroundColor: "rgba(0, 0, 0, 0.7)",
+                        color: "#fff",
+                        border: "1px solid rgba(255, 255, 255, 0.3)",
+                        borderRadius: 4,
+                        cursor: "pointer",
+                        fontWeight: "bold",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                    }}
+                    title="Zoom in"
+                >
+                    +
+                </button>
+                <button
+                    onClick={recenter}
+                    style={{
+                        width: 40,
+                        height: 40,
+                        fontSize: 18,
+                        backgroundColor: "rgba(0, 0, 0, 0.7)",
+                        color: "#fff",
+                        border: "1px solid rgba(255, 255, 255, 0.3)",
+                        borderRadius: 4,
+                        cursor: "pointer",
+                        fontWeight: "bold",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                    }}
+                    title="Recenter (30%)"
+                >
+                    O
+                </button>
+                <button
+                    onClick={() => zoomBy(-0.1)}
+                    style={{
+                        width: 40,
+                        height: 40,
+                        fontSize: 20,
+                        backgroundColor: "rgba(0, 0, 0, 0.7)",
+                        color: "#fff",
+                        border: "1px solid rgba(255, 255, 255, 0.3)",
+                        borderRadius: 4,
+                        cursor: "pointer",
+                        fontWeight: "bold",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                    }}
+                    title="Zoom out"
+                >
+                    −
+                </button>
+            </div>
         </div>
     );
 }

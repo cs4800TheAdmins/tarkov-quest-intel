@@ -13,6 +13,8 @@ export type Marker = {
     approximationNote?: string;
     isVisible: boolean;
     tags: Tag[];
+    isTemporary: boolean;
+    type: MarkerType;
 }
 
 export type MarkerType = "QuestItem" | "Landmark" | "Extraction" | "BossSpawn" | "KeyLocation" | "Other";

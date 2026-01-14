@@ -1,14 +1,64 @@
-import { useState } from "react";
+import { useState, useMemo, useEffect} from "react";
 import MapView from "./ui/MapView/MapView";
 import SearchPanel from "./ui/panels/SearchPanel";
 import FilterPanel from "./ui/panels/FilterPanel";
 import MarkerDetailPanel from "./ui/panels/MarkerDetailPanel";
+import type { Marker, MarkerType } from "./domain/types";
+import { MarkerController } from "./domain/MarkerController";
 
 const PANEL_WIDTH = "33.33vw";
+const ALL_TYPES: MarkerType[] = ["QuestItem", "Landmark", "Extraction", "BossSpawn", "KeyLocation", "Other"];
+
+const markerController = new MarkerController();
 
 export default function App() {
     const [leftPanelCollapsed, setLeftPanelCollapsed] = useState(false);
     const [rightPanelCollapsed, setRightPanelCollapsed] = useState(false);
+
+    const [markers, setMarkers] = useState<Marker[]>([]);
+    const [selectedMarkerId, setSelectedMarkerId] = useState<string | null>(null);
+
+    const [searchQuery, setSearchQuery] = useState("");
+    const [selectedTypes, setSelectedTypes] = useState<Set<MarkerType>>(new Set(ALL_TYPES));
+    const [showApproximate, setShowApproximate] = useState(true);
+
+    useEffect(() => {
+        markerController
+        .loadFromJson("/maps/markers.customs.json")
+        .then(setMarkers)
+        .catch((err) => console.error("Failed to load markers:", err));
+    }, []);
+
+    const visibleMarkers = useMemo(() => {
+      const q = searchQuery.trim().toLowerCase();
+      return markers.filter(marker => {
+        if(!selectedTypes.has(marker.type)) return false;
+        if (!showApproximate && marker.isApproximate) return false;
+        if (!marker.isVisible) return false;
+
+        if (!q) return true;
+
+        const inName = marker.name.toLowerCase().includes(q);
+        const inDesc = (marker.description ?? "").toLowerCase().includes(q);
+        const inTags = (marker.tags ?? []).some(tag => tag.label.toLowerCase().includes(q));
+
+        return inName || inDesc || inTags;
+      })
+    }, [markers, searchQuery, selectedTypes, showApproximate]);
+
+    const toggleType = (type: MarkerType) => {
+      setSelectedTypes(prev => {
+        const next = new Set(prev);
+        if (next.has(type)) next.delete(type);
+        else next.add(type);
+        return next;
+      });
+    }
+
+    const selectedMarker = useMemo(() => {
+      if (!selectedMarkerId) return null;
+      return markers.find(m => m.id === selectedMarkerId) || null;
+    }, [markers, selectedMarkerId]);
 
     return (
         <div style={{ width: "100vw", height: "100vh", position: "relative", overflow: "hidden" }}>
@@ -21,7 +71,11 @@ export default function App() {
                 height: "100%", 
                 zIndex: 0 
             }}>
-                <MapView />
+                <MapView
+                  markers={visibleMarkers}
+                  selectedMarkerId={selectedMarkerId}
+                  onMarkerClick={(marker) => setSelectedMarkerId(marker.id)}
+                />
             </div>
 
             {/* Left Panel - Search */}
@@ -67,10 +121,15 @@ export default function App() {
                     {leftPanelCollapsed ? "▶" : "◀"}
                 </button>
                 <h2 style={{ margin: "0 0 16px 0", fontSize: 18, fontWeight: 600, color: "#333" }}>Search</h2> 
-                <SearchPanel />
+                <SearchPanel value={searchQuery} onChange={setSearchQuery} />
                 <hr style={{ margin: "20px 0", border: "none", borderTop: "1px solid #e0e0e0" }} />
                 <h2 style={{ margin: "0 0 16px 0", fontSize: 18, fontWeight: 600, color: "#333" }}>Filters</h2>
-                <FilterPanel />
+                <FilterPanel
+                  selectedTypes={selectedTypes}
+                  onToggleType={toggleType}
+                  showApproximate={showApproximate}
+                  onShowApproximateChange={setShowApproximate}
+                />
             </aside>
 
             {/* Collapse button when left panel is collapsed */}
@@ -150,7 +209,7 @@ export default function App() {
                     </button>
                     <h2 style={{ margin: 0, fontSize: 18, fontWeight: 600, color: "#333" }}>Marker Details</h2>
                 </div>
-                <MarkerDetailPanel />
+                <MarkerDetailPanel marker={selectedMarker}/>
             </aside>
 
             {/* Collapse button when right panel is collapsed */}

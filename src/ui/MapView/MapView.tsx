@@ -1,19 +1,24 @@
 import { useEffect, useState, useRef, useCallback } from "react";
 import { MapAssetLoader } from "../../data/MapAssetLoader";
-import type { GameMap } from "../../domain/types";
+import type { GameMap, Marker } from "../../domain/types";
 
 const loader = new MapAssetLoader();
 
 const MIN_ZOOM = 0.2;
 const MAX_ZOOM = 3;
-const DEFAULT_ZOOM = 1;
+const DEFAULT_ZOOM = 0.5;
 
-export default function MapView() {
+type MapViewProps = {
+    markers: Marker[];
+    selectedMarkerId: string | null;
+    onMarkerClick: (marker: Marker) => void;
+};
+
+export default function MapView({ markers, selectedMarkerId, onMarkerClick }: MapViewProps) {
     const [gameMap, setGameMap] = useState<GameMap | null>(null);
     const [error, setError] = useState<string | null>(null);
     const [zoom, setZoom] = useState(DEFAULT_ZOOM);
-    const [panX, setPanX] = useState(0);
-    const [panY, setPanY] = useState(0);
+    const [pan, setPan] = useState({ x: 0, y: 0 });
     const [isDragging, setIsDragging] = useState(false);
     const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
     const containerRef = useRef<HTMLDivElement>(null);
@@ -29,12 +34,11 @@ export default function MapView() {
     const handleMouseDown = useCallback((e: React.MouseEvent) => {
         if (e.button !== 0) return; // Only left mouse button
         setIsDragging(true);
-        setDragStart({ x: e.clientX - panX, y: e.clientY - panY });
-    }, [panX, panY]);
+        setDragStart({ x: e.clientX - pan.x, y: e.clientY - pan.y });
+    }, [pan.x, pan.y]);
 
     const handleRecenter = useCallback(() => {
-        setPanX(0);
-        setPanY(0);
+        setPan({ x: 0, y: 0 });
         setZoom(0.3); // Zoom to 30%
     }, []);
 
@@ -78,11 +82,8 @@ export default function MapView() {
     useEffect(() => {
         const handleGlobalMouseMove = (e: MouseEvent) => {
             if (!isDragging) return;
-            const newPanX = e.clientX - dragStart.x;
-            const newPanY = e.clientY - dragStart.y;
-            const constrained = constrainPan(newPanX, newPanY);
-            setPanX(constrained.x);
-            setPanY(constrained.y);
+            const next = constrainPan(e.clientX - dragStart.x, e.clientY - dragStart.y);
+            setPan(next);
         };
 
         const handleGlobalMouseUp = () => {
@@ -101,51 +102,12 @@ export default function MapView() {
 
     // Constrain pan when zoom changes
     useEffect(() => {
-        const constrained = constrainPan(panX, panY);
-        if (constrained.x !== panX || constrained.y !== panY) {
-            setPanX(constrained.x);
-            setPanY(constrained.y);
-        }
-    }, [zoom, constrainPan, panX, panY]);
-
-    // Handle scroll events to constrain scrolling
-    useEffect(() => {
-        const container = containerRef.current;
-        if (!container) return;
-
-        const handleScroll = () => {
-            // Get current scroll position
-            const scrollLeft = container.scrollLeft;
-            const scrollTop = container.scrollTop;
-            
-            const imgWidth = gameMap ? gameMap.widthPx * zoom : 0;
-            const imgHeight = gameMap ? gameMap.heightPx * zoom : 0;
-            const containerWidth = container.clientWidth;
-            const containerHeight = container.clientHeight;
-
-            // Calculate scroll boundaries
-            const maxScrollLeft = Math.max(0, imgWidth - containerWidth);
-            const maxScrollTop = Math.max(0, imgHeight - containerHeight);
-
-            // Constrain scroll position
-            if (scrollLeft < 0) {
-                container.scrollLeft = 0;
-            } else if (scrollLeft > maxScrollLeft) {
-                container.scrollLeft = maxScrollLeft;
-            }
-
-            if (scrollTop < 0) {
-                container.scrollTop = 0;
-            } else if (scrollTop > maxScrollTop) {
-                container.scrollTop = maxScrollTop;
-            }
-        };
-
-        container.addEventListener("scroll", handleScroll);
-        return () => {
-            container.removeEventListener("scroll", handleScroll);
-        };
-    }, [zoom, gameMap]);
+        setPan(prev => {
+            const next = constrainPan(prev.x, prev.y);
+            if(next.x === prev.x && next.y === prev.y) return prev;
+            return next;
+        });
+    }, [zoom, constrainPan]);
 
     if (error) {
         return (
@@ -162,6 +124,7 @@ export default function MapView() {
             </div>
         );
     }
+
     
     return (
         <div 
@@ -171,7 +134,7 @@ export default function MapView() {
                 height: "100%", 
                 position: "relative", 
                 background: "#111",
-                overflow: "auto",
+                overflow: "hidden",
                 cursor: isDragging ? "grabbing" : "grab",
                 userSelect: "none",
             }}
@@ -267,7 +230,7 @@ export default function MapView() {
                     position: "absolute",
                     top: "50%",
                     left: "50%",
-                    transform: `translate(calc(-50% + ${panX}px), calc(-50% + ${panY}px)) scale(${zoom})`,
+                    transform: `translate(calc(-50% + ${pan.x}px), calc(-50% + ${pan.y}px)) scale(${zoom})`,
                     transformOrigin: "center center",
                     transition: isDragging ? "none" : "transform 0.1s ease-out",
                 }}
@@ -287,6 +250,36 @@ export default function MapView() {
                     }}
                     draggable={false}
                 />
+
+                {/* Markers */}
+                {markers.map(marker => {
+                    const isSelected = marker.id === selectedMarkerId;
+                    return (
+                        <button
+                            key={marker.id}
+                            onMouseDown={(e) => e.stopPropagation()}
+                            onClick={(e) =>  {
+                                e.stopPropagation();
+                                onMarkerClick(marker)
+                            }}
+                            title={marker.name}
+                            style={{
+                                position: "absolute",
+                                left: marker.x,
+                                top: marker.y,
+                                transform: "translate(-50%, -100%)",
+                                width: 0,
+                                height: 0,
+                                borderLeft: "20px solid transparent",
+                                borderRight: "20px solid transparent",
+                                borderTop: "40px solid " + (isSelected ? "#27e4f5" : (marker.isTemporary ? "#be95be" : "#33fc19")),
+                                background: marker.isTemporary ? "red" : "#242424",
+                                cursor: "pointer",
+                                padding: 0,
+                            }}
+                        />
+                    );
+                })}
             </div>
         </div>
     );

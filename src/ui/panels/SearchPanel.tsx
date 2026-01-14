@@ -1,16 +1,17 @@
-import { useState } from "react";
+type SearchPanelProps = {
+    value: string;
+    onChange: (value: string) => void;
+}
 
-export default function SearchPanel() {
-    const [searchQuery, setSearchQuery] = useState("");
-
+export default function SearchPanel({ value, onChange }: SearchPanelProps) {
     return (
         <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
             <div style={{ position: "relative" }}>
                 <input
                     type="text"
                     placeholder="Search by name, description, or tags..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
+                    value={value}
+                    onChange={(e) => onChange(e.target.value)}
                     style={{
                         width: "100%",
                         padding: "10px 36px 10px 12px",
@@ -24,9 +25,9 @@ export default function SearchPanel() {
                     onFocus={(e) => e.target.style.borderColor = "#646cff"}
                     onBlur={(e) => e.target.style.borderColor = "#ccc"}
                 />
-                {searchQuery && (
+                {value && (
                     <button
-                        onClick={() => setSearchQuery("")}
+                        onClick={() => onChange("")}
                         style={{
                             position: "absolute",
                             right: 6,
@@ -51,9 +52,9 @@ export default function SearchPanel() {
                     </button>
                 )}
             </div>
-            {searchQuery && (
+            {value && (
                 <div style={{ fontSize: 12, color: "#666", marginTop: 4, paddingLeft: 2 }}>
-                    Searching: <strong style={{ color: "#333" }}>{searchQuery}</strong>
+                    Searching: <strong style={{ color: "#333" }}>{value}</strong>
                 </div>
             )}
         </div>

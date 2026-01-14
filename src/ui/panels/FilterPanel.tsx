@@ -1,22 +1,20 @@
-import { useState } from "react";
 import type { MarkerType } from "../../domain/types";
 
 const MARKER_TYPES: MarkerType[] = ["QuestItem", "Landmark", "Extraction", "BossSpawn", "KeyLocation", "Other"];
 
-export default function FilterPanel() {
-    const [selectedTypes, setSelectedTypes] = useState<Set<MarkerType>>(new Set(MARKER_TYPES));
-    const [showApproximate, setShowApproximate] = useState(true);
+type FilterPanelProps = {
+    selectedTypes: Set<MarkerType>;
+    onToggleType: (type: MarkerType) => void;
+    showApproximate: boolean;
+    onShowApproximateChange: (show: boolean) => void;
+}
 
-    const toggleType = (type: MarkerType) => {
-        const newSet = new Set(selectedTypes);
-        if (newSet.has(type)) {
-            newSet.delete(type);
-        } else {
-            newSet.add(type);
-        }
-        setSelectedTypes(newSet);
-    };
-
+export default function FilterPanel({
+    selectedTypes,
+    onToggleType,
+    showApproximate,
+    onShowApproximateChange,
+}: FilterPanelProps) {
     return (
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
             <div>
@@ -38,7 +36,7 @@ export default function FilterPanel() {
                             <input
                                 type="checkbox"
                                 checked={selectedTypes.has(type)}
-                                onChange={() => toggleType(type)}
+                                onChange={() => onToggleType(type)}
                                 style={{ 
                                     cursor: "pointer",
                                     width: 16,
@@ -67,7 +65,7 @@ export default function FilterPanel() {
                     <input
                         type="checkbox"
                         checked={showApproximate}
-                        onChange={(e) => setShowApproximate(e.target.checked)}
+                        onChange={(e) => onShowApproximateChange(e.target.checked)}
                         style={{ 
                             cursor: "pointer",
                             width: 16,

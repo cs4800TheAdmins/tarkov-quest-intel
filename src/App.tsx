@@ -59,6 +59,15 @@ export default function App() {
       if (!selectedMarkerId) return null;
       return markers.find(m => m.id === selectedMarkerId) || null;
     }, [markers, selectedMarkerId]);
+    const [zoomOnMarkerRequest, setZoomOnMarkerRequest] = useState(0);
+
+    const nameMatches = useMemo(() => {
+      const q = searchQuery.trim().toLowerCase();
+      if (!q) return [];
+      return markers
+        .filter(m => m.name.toLowerCase().includes(q))
+        .slice(0, 10);
+    }, [markers, searchQuery]);
 
     return (
         <div style={{ width: "100vw", height: "100vh", position: "relative", overflow: "hidden" }}>
@@ -74,7 +83,11 @@ export default function App() {
                 <MapView
                   markers={visibleMarkers}
                   selectedMarkerId={selectedMarkerId}
-                  onMarkerClick={(marker) => setSelectedMarkerId(marker.id)}
+                  onMarkerClick={(marker) => {
+                    setSelectedMarkerId(marker.id);
+                    setRightPanelCollapsed(false);
+                  }}
+                  zoomOnMarkerRequest={zoomOnMarkerRequest}
                 />
             </div>
 
@@ -121,7 +134,17 @@ export default function App() {
                     {leftPanelCollapsed ? "▶" : "◀"}
                 </button>
                 <h2 style={{ margin: "0 0 16px 0", fontSize: 18, fontWeight: 600, color: "#333" }}>Search</h2> 
-                <SearchPanel value={searchQuery} onChange={setSearchQuery} />
+                <SearchPanel
+                  value={searchQuery}
+                  onChange={setSearchQuery}
+                  results={nameMatches}
+                  onResultClick={(marker) => {
+                    setSearchQuery(marker.name);
+                    setSelectedMarkerId(marker.id);
+                    setRightPanelCollapsed(false);
+                    setZoomOnMarkerRequest(r => r + 1);
+                  }}
+                />
                 <hr style={{ margin: "20px 0", border: "none", borderTop: "1px solid #e0e0e0" }} />
                 <h2 style={{ margin: "0 0 16px 0", fontSize: 18, fontWeight: 600, color: "#333" }}>Filters</h2>
                 <FilterPanel

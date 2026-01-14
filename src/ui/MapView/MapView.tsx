@@ -4,7 +4,7 @@ import type { GameMap, Marker } from "../../domain/types";
 
 const loader = new MapAssetLoader();
 
-const MIN_ZOOM = 0.2;
+const MIN_ZOOM = 0.3;
 const MAX_ZOOM = 3;
 const DEFAULT_ZOOM = 0.5;
 
@@ -12,9 +12,10 @@ type MapViewProps = {
     markers: Marker[];
     selectedMarkerId: string | null;
     onMarkerClick: (marker: Marker) => void;
+    zoomOnMarkerRequest?: number;
 };
 
-export default function MapView({ markers, selectedMarkerId, onMarkerClick }: MapViewProps) {
+export default function MapView({ markers, selectedMarkerId, onMarkerClick, zoomOnMarkerRequest }: MapViewProps) {
     const [gameMap, setGameMap] = useState<GameMap | null>(null);
     const [error, setError] = useState<string | null>(null);
     const [zoom, setZoom] = useState(DEFAULT_ZOOM);
@@ -53,12 +54,12 @@ export default function MapView({ markers, selectedMarkerId, onMarkerClick }: Ma
         const containerWidth = containerRef.current.clientWidth;
         const containerHeight = containerRef.current.clientHeight;
 
-        // If image is smaller than container, center it (no panning needed)
+       
         if (imgWidth <= containerWidth && imgHeight <= containerHeight) {
             return { minX: 0, maxX: 0, minY: 0, maxY: 0 };
         }
 
-        // Calculate maximum pan distances
+
         const maxPanX = (imgWidth - containerWidth) / 2;
         const maxPanY = (imgHeight - containerHeight) / 2;
 
@@ -100,7 +101,7 @@ export default function MapView({ markers, selectedMarkerId, onMarkerClick }: Ma
         }
     }, [isDragging, dragStart, constrainPan]);
 
-    // Constrain pan when zoom changes
+
     useEffect(() => {
         setPan(prev => {
             const next = constrainPan(prev.x, prev.y);
@@ -108,6 +109,12 @@ export default function MapView({ markers, selectedMarkerId, onMarkerClick }: Ma
             return next;
         });
     }, [zoom, constrainPan]);
+
+    
+    useEffect(() => {
+        if (!zoomOnMarkerRequest) return;
+        setZoom(0.5);
+    }, [zoomOnMarkerRequest]);
 
     if (error) {
         return (
@@ -254,6 +261,9 @@ export default function MapView({ markers, selectedMarkerId, onMarkerClick }: Ma
                 {/* Markers */}
                 {markers.map(marker => {
                     const isSelected = marker.id === selectedMarkerId;
+                    const baseColor = isSelected
+                        ? "#27e4f5"
+                        : (marker.isTemporary ? "#be95be" : "#33fc19");
                     return (
                         <button
                             key={marker.id}
@@ -270,10 +280,10 @@ export default function MapView({ markers, selectedMarkerId, onMarkerClick }: Ma
                                 transform: "translate(-50%, -100%)",
                                 width: 0,
                                 height: 0,
-                                borderLeft: "20px solid transparent",
-                                borderRight: "20px solid transparent",
-                                borderTop: "40px solid " + (isSelected ? "#27e4f5" : (marker.isTemporary ? "#be95be" : "#33fc19")),
-                                background: marker.isTemporary ? "red" : "#242424",
+                                borderLeft: "26px solid transparent",
+                                borderRight: "26px solid transparent",
+                                borderTop: `52px solid ${baseColor}`,
+                                background: "transparent",
                                 cursor: "pointer",
                                 padding: 0,
                             }}

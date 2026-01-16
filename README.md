@@ -27,3 +27,7 @@ npm run sync:map
 ```
 
 This script fetches the latest Customs map markers from the Tarkov.dev GraphQL API and writes them to [public/maps/markers.customs.json](public/maps/markers.customs.json). Run this command whenever you need to update the marker data with the latest information from the API.
+
+## System Testing
+
+[System Testing Manual](src/test/system-testing-checklist.md)

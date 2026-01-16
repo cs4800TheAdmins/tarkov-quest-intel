@@ -7,7 +7,6 @@ import type { QueryResponse } from "../src/api/apiTypes.js";
 import { mapMarkers } from "../src/services/markerMapper.js";
 
 async function main() {
-
     const apiData = await tarkovDevQuery<QueryResponse>(CUSTOMS_MARKERS_QUERY);
     const apiMap = apiData.maps?.[0];
     if (!apiMap) throw new Error("No map data received from API");

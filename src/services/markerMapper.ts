@@ -4,7 +4,7 @@ import type { Spawn, Extract, Transit, Hazard, Lock, MapData } from "../api/apiT
 type WorldPos = { x: number, z: number };
 type MapPos = { x: number, y: number };
 
-function worldToMap(pos: WorldPos): MapPos {
+export function worldToMap(pos: WorldPos): MapPos {
     // Convert from API world coords to web map pixel coords
     const x = 3.3498895526 * pos.x + -0.1066742134 * pos.z + 2067.7272310111;
     const y = 0.0019416183 * pos.x + -3.4147542227 * pos.z + 929.1105981920;
@@ -33,7 +33,7 @@ export function mapMarkers(map: MapData): Marker[] {
         markers.push({
             id: extract.id || uniqueId("extract", i),
             name: extract.name || `Extract #${i + 1}`,
-            description: "Customs Extract Point",
+            description: `Extract Point: ${extract.name}`,
             x: Math.round(x),
             y: Math.round(y),
             isApproximate: false,
@@ -72,7 +72,7 @@ export function mapMarkers(map: MapData): Marker[] {
 
         markers.push({
             id: transit.id || uniqueId("transit", i),
-            name: target ? `To ${target}` : `Transit #${i + 1}`,
+            name: target ? `Transit To: ${target}` : `Transit #${i + 1}`,
             description: desc || "Transit Point",
             x: Math.round(x),
             y: Math.round(y),
@@ -90,7 +90,7 @@ export function mapMarkers(map: MapData): Marker[] {
         const needsPower = lock.needsPower ? " (Needs Power)" : "";
 
         markers.push({
-            id: lock.key?.id || uniqueId("lock", i),
+            id: uniqueId("lock", i),
             name: keyName || `Lock #${i + 1}`,
             description: `Lock${needsPower}${keyName ? ` - Key: ${keyName}` : ""}`,
             x: Math.round(x),
